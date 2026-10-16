@@ -1,0 +1,36 @@
+filters:
+  and:
+    - or:
+        - note.type == "note"
+        - note.type == "solution"
+    - note.status != "archiviert"
+views:
+  - type: table
+    name: Alles
+    order:
+      - file.name
+      - type
+      - status
+      - file.mtime
+  - type: table
+    name: Nach Reifegrad
+    filters:
+      and:
+        - note.type == "note"
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - status
+      - file.mtime
+  - type: table
+    name: Geloeste Probleme
+    filters:
+      and:
+        - note.type == "solution"
+    order:
+      - file.name
+      - system
+      - status
+      - file.mtime

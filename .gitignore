@@ -1,0 +1,34 @@
+# Geraeteabhaengiger Obsidian-State. Aendert sich bei jedem Oeffnen und
+# erzeugt sonst bei jedem Sync zwischen Windows, macOS und iPhone Konflikte.
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/graph.json
+.obsidian/*.styler-bak
+.obsidian/plugins/*/data.json
+# Ausnahme: die Icon-Zuordnung enthaelt kein Secret und gehoert aufs iPhone.
+!.obsidian/plugins/obsidian-icon-folder/data.json
+.obsidian/plugins/*/*.sh
+.trash/
+
+# Desktop-only Plugin, laeuft auf iOS nicht, rund 2,8 MB.
+# Wird bei der Einrichtung frisch geladen, siehe Claude/installation.md A5.
+.obsidian/plugins/mcp-tools-istefox/
+
+# Grosse Referenz-PDFs bleiben lokal.
+# Die Berichtsheft-PDFs unter Attachments/Berichtsheft/ bleiben bewusst
+# versioniert, das sind die unterschriebenen Nachweise.
+Attachments/Referenz/
+
+# Betriebssystem-Muell
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Python-Cache aus Claude/scripts/
+__pycache__/

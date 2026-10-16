@@ -1,0 +1,17 @@
+filters:
+  and:
+    - note.type == "berichtsheft"
+    - note.status != "archiviert"
+views:
+  - type: table
+    name: Letzte 4 Wochen
+    order:
+      - woche
+      - von
+      - bis
+      - abteilung
+      - status
+    sort:
+      - property: woche
+        direction: DESC
+    limit: 4

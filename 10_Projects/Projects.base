@@ -1,0 +1,33 @@
+filters:
+  and:
+    - note.type == "project"
+    - note.status != "archiviert"
+views:
+  - type: table
+    name: Aktiv
+    filters:
+      and:
+        - note.status == "aktiv"
+    order:
+      - file.name
+      - area
+      - due
+      - file.mtime
+  - type: table
+    name: Nach Status
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - status
+      - area
+      - due
+  - type: cards
+    name: Karten
+    filters:
+      and:
+        - note.status == "aktiv"
+    order:
+      - file.name
+      - outcome

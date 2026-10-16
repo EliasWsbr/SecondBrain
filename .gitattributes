@@ -1,0 +1,6 @@
+# Einheitlich LF im Repo und in der Arbeitskopie. Ohne das macht
+# core.autocrlf=true auf Windows aus jedem Checkout eine Komplettaenderung,
+# die auf dem iPhone als Konflikt ankommt.
+* text=auto eol=lf
+*.pdf  binary
+*.docx binary

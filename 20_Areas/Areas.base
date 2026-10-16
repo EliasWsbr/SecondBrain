@@ -1,0 +1,12 @@
+filters:
+  and:
+    - note.type == "area"
+    - note.status != "archiviert"
+views:
+  - type: table
+    name: Alle Bereiche
+    order:
+      - file.name
+      - status
+      - review
+      - file.mtime

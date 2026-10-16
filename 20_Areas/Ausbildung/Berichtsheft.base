@@ -1,0 +1,23 @@
+filters:
+  and:
+    - note.type == "berichtsheft"
+    - note.status != "archiviert"
+views:
+  - type: table
+    name: Alle Wochen
+    order:
+      - woche
+      - von
+      - bis
+      - abteilung
+      - status
+  - type: table
+    name: Noch nicht abgegeben
+    filters:
+      and:
+        - note.status != "fertig"
+    order:
+      - woche
+      - von
+      - bis
+      - status

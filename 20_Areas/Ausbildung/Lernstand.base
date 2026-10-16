@@ -1,0 +1,26 @@
+filters:
+  and:
+    - note.type == "lernthema"
+    - note.status != "archiviert"
+views:
+  - type: table
+    name: Nach Lernstand
+    groupBy:
+      property: stand
+      direction: ASC
+    order:
+      - file.name
+      - pruefung
+      - lernfeld
+      - wichtigkeit
+      - stand
+  - type: table
+    name: Noch offen
+    filters:
+      and:
+        - note.stand != "sitzt"
+    order:
+      - file.name
+      - pruefung
+      - wichtigkeit
+      - stand

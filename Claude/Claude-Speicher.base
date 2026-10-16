@@ -1,0 +1,29 @@
+filters:
+  and:
+    - or:
+        - note.type == "claude-memory"
+        - note.type == "claude-session"
+    - note.status != "archiviert"
+views:
+  - type: table
+    name: Gedaechtnis
+    filters:
+      and:
+        - note.type == "claude-memory"
+    groupBy:
+      property: kategorie
+      direction: ASC
+    order:
+      - file.name
+      - kategorie
+      - status
+      - file.mtime
+  - type: table
+    name: Sessions
+    filters:
+      and:
+        - note.type == "claude-session"
+    order:
+      - datum
+      - file.name
+      - thema
